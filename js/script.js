@@ -100,7 +100,55 @@ $(document).ready(function () {
         if(label){
             return `<div class="label">${label}</div>`
         }else{
-            return 
+            return ``
+        }
+    }
+
+    const templateSandwichImg = (img, ko_title) => {
+        if(img, ko_title){
+            return `<img src="${img}" alt="${ko_title}">`
+        }else{
+            return ``
+        }
+    }
+
+    const templateSandwichKo_title = (ko_title) => {
+        if(ko_title){
+            return `<strong class="ko_title">${ko_title}</strong>`
+        }else{
+            return ``
+        }
+    }
+
+    const templateSandwichEn_title = (en_title) => {
+        if(en_title){
+            return `<span class="en_title">${en_title}</span>`
+        }else{
+            return ``
+        }
+    }
+
+    const templateSandwichCkal = (kcal) => {
+        if(kcal){
+            return `<span class="kcal">${kcal}</span>`
+        }else{
+            return ``
+        }
+    }
+
+    const templateSandwichSummary = (summary) => {
+        if(summary){
+            return `<p class="desc">${summary}</p>`
+        }else{
+            return ``
+        }
+    }
+
+    const templateSandwichView_id = (view_id) => {
+        if(view_id){
+            return `<div class="icon" data-id="${view_id}"></div>`
+        }else{
+            return ``
         }
     }
 
@@ -113,13 +161,13 @@ $(document).ready(function () {
             <a href="#">
                 ${templateSandwichLabel(label)}
                 <div class="img">
-                    <img src="${img}" alt="${ko_title}">
+                    ${templateSandwichImg(img, ko_title)}
                 </div>
-                <strong class="ko_title">${ko_title}</strong>
-                <span class="en_title">${en_title}</span>
-                <span class="kcal">${kcal}</span>
-                <p class="desc">${summary}</p>
-                <div class="icon" data-id="${view_id}"></div>
+                ${templateSandwichKo_title(ko_title)}
+                ${templateSandwichEn_title(en_title)}
+                ${templateSandwichCkal(kcal)}
+                ${templateSandwichSummary(summary)}
+                ${templateSandwichView_id(view_id)}
             </a>
         </li>
         `
